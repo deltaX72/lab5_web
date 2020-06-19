@@ -147,7 +147,7 @@ def apixml():
     return strfile
 
 @app.route("/drinks",methods=['GET','POST'])
-def buildings():
+def drinks():
     dom = ET.parse("./static/xml/drinks.xml")
     type = request.args.get('type')
     if type == 'list':

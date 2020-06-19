@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="drinks.xslt" ?>
+<drinks>
+  <drink id= "1">
+    <name>Water</name>
+    <volume>1.0</volume>
+    <price>$3</price>
+  </drink>
+  <drink id= "2">
+    <name>Milk</name>
+    <volume>2.0</volume>
+    <price>$5</price>
+  </drink>
+  <drink id= "3">
+    <name>Wine</name>
+    <volume>1.5</volume>
+    <price>$7</price>
+  </drink>
+  <drink id= "4">
+    <name>Beer</name>
+    <volume>1.0</volume>
+    <price>$4</price>
+  </drink>
+  <drink id= "5">
+    <name>Juice</name>
+    <volume>1.0</volume>
+    <price>$2</price>
+  </drink>
+</drink>

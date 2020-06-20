@@ -182,7 +182,7 @@ def picture_api():
            
         pic = picture.convert_to_rgb(string)
         pic = Image.open('static/img.jpeg')
-        pic = picture.image_resize(pic, coef)
+        pic = picture.resize_image(pic, coef)
         pic.save('static/result.jpeg')
     return render_template("picture.html", result = pic)
 

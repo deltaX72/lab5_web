@@ -177,7 +177,7 @@ def picture():
         coef = float(request.form.get('coef'))
            
         pic = photo.convert_to_rgb(string)
-        pic = picture.image_resize(pic, coef)
+        pic = photo.image_resize(pic, coef)
         pic.save('static/result.jpg')
     return render_template("picture.html", result = pic)
 

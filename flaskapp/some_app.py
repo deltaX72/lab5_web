@@ -146,8 +146,6 @@ def apixml():
     strfile = ET.tostring(newhtml)
     return strfile
 
-import photo
-
 @app.route("/drinks",methods=['GET','POST'])
 def drinks():
     dom = ET.parse("./static/xml/drinks.xml")
@@ -164,6 +162,8 @@ def drinks():
     strfile = ET.tostring(newhtml)
     return strfile
 
+import picture
+
 @app.route("/picture", methods=['GET','POST'])
 def picture():
     pic = False
@@ -171,8 +171,8 @@ def picture():
         string = request.form.get('base64')
         coef = float(request.form.get('coef'))
            
-        pic = photo.convert_to_rgb(string)
-        pic = photo.image_resize(pic, coef)
+        pic = picture.convert_to_rgb(string)
+        pic = picture.image_resize(pic, coef)
         pic.save('static/result.jpg')
     return render_template("picture.html", result = pic)
 

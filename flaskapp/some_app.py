@@ -146,6 +146,8 @@ def apixml():
     strfile = ET.tostring(newhtml)
     return strfile
 
+import photo
+
 @app.route("/drinks",methods=['GET','POST'])
 def drinks():
     dom = ET.parse("./static/xml/drinks.xml")
@@ -161,6 +163,23 @@ def drinks():
     newhtml = transform(dom)
     strfile = ET.tostring(newhtml)
     return strfile
+
+@app.route("/picture", methods = ['GET', 'POST']
+def picture():
+    pic = False
+    if request.method == "POST":
+        try:
+            os.remove('static/result.jpg')
+        except FileNotFoundError:
+            pass
+           
+        pic = request.form.get('pic')
+        pic = photo.convert_to_rgb(pic, '')
+           
+        pic1 = Image.open('static/image0008.jpg')
+        pic1 = photo.resize_image(pic1, 0.5)
+        pic.save('static/result.jpg')
+    return render_template("picture.html", result=pic)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=5000)

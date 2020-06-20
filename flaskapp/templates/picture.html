@@ -6,16 +6,16 @@
     </head>
     <body>
         {% if result %}
-            <img src="../static/result.jpg" alt="">
+            <img src="../static/result.jpeg" alt="">
         {% else %}
             <form action="/picture" method="post">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                 <p>
-                    <label for="first">Base64 input string</label>
-                    <input type="text" name="base64">
+                    <label for="a">Base64 input string</label>
+                    <input type="text" name="Base64">
                 </p>
                 <p>
-                    <label for="second">Coefficient of resizing</label>
+                    <label for="b">Coefficient of resizing</label>
                     <input type="text" name="coef">
                 </p>
                 <p>

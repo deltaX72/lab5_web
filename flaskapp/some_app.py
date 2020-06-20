@@ -168,6 +168,11 @@ import picture
 def picture():
     pic = False
     if request.method == "POST":
+        try:
+            os.remove('static/result.jpg')
+            os.remove('static/img.jpg')
+        except FileNotFoundError:
+            pass
         string = request.form.get('base64')
         coef = float(request.form.get('coef'))
            

@@ -1,6 +1,6 @@
 import base64
 import io
-from PIL import Image
+from PIL import Image, ImageEnhance
 import numpy as np
 
 def resize_image(image, coefficient):

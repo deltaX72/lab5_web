@@ -40,6 +40,10 @@ app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 # обязательно добавить для работы со стандартными шаблонами
 bootstrap = Bootstrap(app)
 
+# CSRF is here
+from flask_wtf.csrf import CSRFProtect
+csrf = CSRFProtect(app)
+
 # создаем форму для загрузки файла
 class NetForm(FlaskForm):
     # поле для введения строки, валидируется наличием данных

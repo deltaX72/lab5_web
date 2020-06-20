@@ -9,5 +9,5 @@ def resize_image(image, coefficient):
     return resized_image
 
 def convert_to_rgb(base64_string):
-    with open('static/result.jpg', 'wb') as f:
+    with open('static/img.jpg', 'wb') as f:
         f.write(base64.b64decode(str(base64_string)))

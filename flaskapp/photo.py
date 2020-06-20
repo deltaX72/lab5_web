@@ -8,8 +8,8 @@ def resize_image(image, coefficient):
     resized_image = image.resize((int(h * coefficient), int(w * coefficient)))
     return resized_image
 
-def convert_to_rgb(base64_string, index):
+def convert_to_rgb(base64_string):
     data = base64.b64decode(str(base64_string))
-    filename = f'static/photo{index}.jpg' 
+    filename = f'static/resized_photo.jpg' 
     with open(filename, 'wb') as f:
         f.write(data)

@@ -169,17 +169,17 @@ def picture():
     pic = False
     if request.method == "POST":
         try:
-            os.remove('static/result.jpg')
-            os.remove('static/img.jpg')
+            os.remove('static/result.jpeg')
+            os.remove('static/img.jpeg')
         except FileNotFoundError:
             pass
-        string = request.form.get('base64')
+        string = request.form.get('Base64')
         coef = float(request.form.get('coef'))
            
         pic = picture.convert_to_rgb(string)
-        pic = Image.open('static/img.jpg')
+        pic = Image.open('static/img.jpeg')
         pic = picture.image_resize(pic, coef)
-        pic.save('static/result.jpg')
+        pic.save('static/result.jpeg')
     return render_template("picture.html", result = pic)
 
 if __name__ == "__main__":

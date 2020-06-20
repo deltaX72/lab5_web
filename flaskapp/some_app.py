@@ -168,11 +168,6 @@ def drinks():
 def picture():
     pic = False
     if request.method == "POST":
-        try:
-            os.remove('static/result.jpg')
-        except FileNotFoundError:
-            pass
-        
         string = request.form.get('base64')
         coef = float(request.form.get('coef'))
            

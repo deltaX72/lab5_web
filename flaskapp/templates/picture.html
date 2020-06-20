@@ -5,19 +5,23 @@
         <title>Picture resizing</title>
     </head>
     <body>
-        <form action="/picture" method="post">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-            <p>
-                <label for="first">Base64 input string</label>
-                <input type="text" name="base64">
-            </p>
-            <p>
-                <label for="second">Coefficient of resizing</label>
-                <input type="text" name="coef">
-            </p>
-            <p>
-                <input type="submit">
-            </p>
-        </form>
+        {% if result %}
+            <img src="../static/picha.jpeg" alt="">
+        {% else %}
+            <form action="/picture" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <p>
+                    <label for="first">Base64 input string</label>
+                    <input type="text" name="base64">
+                </p>
+                <p>
+                    <label for="second">Coefficient of resizing</label>
+                    <input type="text" name="coef">
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+            </form>
+        {% endif %}
     </body>
 </html>

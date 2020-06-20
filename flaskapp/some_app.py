@@ -176,7 +176,7 @@ def picture():
         string = request.form.get('base64')
         coef = float(request.form.get('coef'))
            
-        picture.convert_to_rgb(string)
+        pic = picture.convert_to_rgb(string)
         pic = Image.open('static/img.jpg')
         pic = picture.image_resize(pic, coef)
         pic.save('static/result.jpg')

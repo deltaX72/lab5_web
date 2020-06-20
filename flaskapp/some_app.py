@@ -168,8 +168,8 @@ def drinks():
 
 import picture
 
-@app.route("/picture", methods=['GET','POST'])
-def picture():
+@app.route("/picture_api", methods=['GET','POST'])
+def picture_api():
     pic = False
     if request.method == "POST":
         try:

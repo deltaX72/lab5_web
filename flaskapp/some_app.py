@@ -164,7 +164,7 @@ def drinks():
     strfile = ET.tostring(newhtml)
     return strfile
 
-@app.route("/picture", methods = ['GET', 'POST']
+@app.route("/picture", methods=['GET','POST'])
 def picture():
     pic = False
     if request.method == "POST":
@@ -172,14 +172,14 @@ def picture():
             os.remove('static/result.jpg')
         except FileNotFoundError:
             pass
+        
+        string = request.form.get('base64')
+        coef = float(request.form.get('coef'))
            
-        pic = request.form.get('pic')
-        pic = photo.convert_to_rgb(pic, '')
-           
-        pic1 = Image.open('static/image0008.jpg')
-        pic1 = photo.resize_image(pic1, 0.5)
+        pic = photo.convert_to_rgb(string)
+        pic = picture.image_resize(pic, coef)
         pic.save('static/result.jpg')
-    return render_template("picture.html", result=pic)
+    return render_template("picture.html", result = pic)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=5000)

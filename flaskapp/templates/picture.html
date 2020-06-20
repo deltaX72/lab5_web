@@ -6,7 +6,7 @@
     </head>
     <body>
         {% if result %}
-            <img src="../static/picha.jpeg" alt="">
+            <img src="../static/result.jpg" alt="">
         {% else %}
             <form action="/picture" method="post">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
